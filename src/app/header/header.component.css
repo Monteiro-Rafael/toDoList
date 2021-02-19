@@ -12,4 +12,6 @@
 }
 .navbar-nav  li a:hover {
   color: #7186c0 !important;
+  transform: scale(1.07);
+  transition: .1s ease all;
 }

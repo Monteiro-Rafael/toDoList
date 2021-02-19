@@ -1,0 +1,37 @@
+<mat-card class="example-card">
+  <mat-card-subtitle>
+    <form>
+      <mat-form-field>
+        <input matInput placeholder="Título">
+      </mat-form-field>
+    </form>
+  </mat-card-subtitle>
+
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Descrição</mat-label>
+        <textarea 
+          matInput cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1" 
+          #message maxlength="256" 
+          placeholder="Ex. I need help with..." 
+        ></textarea>
+        <mat-hint align="start"></mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="button-row">
+    <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <button class="botaoCriar" mat-mini-fab color="primary">
+      <mat-icon>done</mat-icon>
+    </button>
+      
+  </div>
+  </mat-card-actions>
+</mat-card>

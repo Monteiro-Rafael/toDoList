@@ -1,0 +1,19 @@
+.example-card {
+  max-width: 210px;
+  background-color: #278ea5;
+  
+}
+
+text-area{
+  height: 200px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+
+.botaoCriar {
+  position: relative;
+}

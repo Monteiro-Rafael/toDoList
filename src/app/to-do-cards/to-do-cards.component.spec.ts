@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DynamicTabsComponent } from './dynamic-tabs.component';
+import { ToDoCardsComponent } from './to-do-cards.component';
 
-describe('DynamicTabsComponent', () => {
-  let component: DynamicTabsComponent;
-  let fixture: ComponentFixture<DynamicTabsComponent>;
+describe('ToDoCardsComponent', () => {
+  let component: ToDoCardsComponent;
+  let fixture: ComponentFixture<ToDoCardsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DynamicTabsComponent ]
+      declarations: [ ToDoCardsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DynamicTabsComponent);
+    fixture = TestBed.createComponent(ToDoCardsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
