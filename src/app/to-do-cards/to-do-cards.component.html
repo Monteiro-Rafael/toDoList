@@ -1,37 +1,51 @@
-<mat-card class="example-card">
-  <mat-card-subtitle>
-    <form>
-      <mat-form-field>
-        <input matInput placeholder="Título">
-      </mat-form-field>
-    </form>
-  </mat-card-subtitle>
+  <div class="d-flex flex-row flex-wrap mb-3" >
+    <div class="p-2" *ngFor="let card of cards; let i = index">
+    <mat-card class="example-card">
+      <mat-card-subtitle>
+        <form >
+          <mat-form-field>
+            <input
+            [(ngModel)]="titulo"
+            type="text"
+            matInput
+            placeholder="Título"
+            >
+          </mat-form-field>
+        </form>
+      </mat-card-subtitle>
 
-  <mat-card-content>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <mat-label>Descrição</mat-label>
-        <textarea 
-          matInput cdkTextareaAutosize
-          #autosize="cdkTextareaAutosize"
-          cdkAutosizeMinRows="1" 
-          #message maxlength="256" 
-          placeholder="Ex. I need help with..." 
-        ></textarea>
-        <mat-hint align="start"></mat-hint>
-        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-      </mat-form-field>
-    </form>
-  </mat-card-content>
-  <mat-card-actions>
-    <div class="button-row">
-    <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
-      <mat-icon>clear</mat-icon>
-    </button>
-    <button class="botaoCriar" mat-mini-fab color="primary">
-      <mat-icon>done</mat-icon>
-    </button>
-      
+      <mat-card-content>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Descrição</mat-label>
+            <textarea
+              type="text"
+              [(ngModel)]="descricao"
+
+              matInput cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="1"
+              #message maxlength="256"
+
+            >
+            </textarea>
+            <mat-hint align="start"></mat-hint>
+            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="button-row">
+        <button class="remover" *ngIf="!(i==0)" (click)="removerCard(this.card.index)"mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
+          <mat-icon>clear</mat-icon>
+        </button>
+        <button class="adicionar" *ngIf="i==0" (click)="adicionarCard(this.card.titulo, this.card.descricao)" class="botaoCriar" mat-mini-fab color="primary">
+          <mat-icon>done</mat-icon>
+        </button>
+
+      </div>
+      </mat-card-actions>
+    </mat-card>
   </div>
-  </mat-card-actions>
-</mat-card>
+
+  </div>

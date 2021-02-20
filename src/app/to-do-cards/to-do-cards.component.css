@@ -1,7 +1,7 @@
 .example-card {
-  max-width: 210px;
-  background-color: #278ea5;
-  
+  max-width: 200px;
+  background-color: #fcdab7;
+
 }
 
 text-area{
@@ -16,4 +16,11 @@ text-area{
 
 .botaoCriar {
   position: relative;
+}
+
+button:hover{
+
+  transform: scale(1.2);
+  transition: .15s ease all;
+
 }
