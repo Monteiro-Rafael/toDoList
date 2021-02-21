@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import { AboutComponent } from './about/about.component';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +18,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+
+const appRoutes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+];
 
 @NgModule({
   declarations: [
@@ -36,7 +43,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    DragDropModule
+    DragDropModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
