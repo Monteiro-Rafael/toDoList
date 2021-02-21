@@ -17,29 +17,21 @@ cards: Card[] = [
 
 onAddCard(titulo, descricao){
 
-
   const newCard = new Card (titulo, descricao);
 
   this.cards.push(newCard);
-  //alert(this.cards[1].titulo);
 
 
-}
+  }
 
 onRemoveCard(index){
 
-
   this.cards.splice(index, 1);
-
-
 }
 
   constructor() { }
 
-
-
   ngOnInit(): void {
-
   }
 
 }

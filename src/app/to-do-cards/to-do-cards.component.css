@@ -24,3 +24,9 @@ button:hover{
   transition: .15s ease all;
 
 }
+
+
+.drag:hover{
+  cursor: grab;
+}
+

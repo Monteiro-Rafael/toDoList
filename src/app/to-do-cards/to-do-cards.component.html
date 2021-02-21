@@ -1,28 +1,28 @@
   <div class="d-flex flex-row flex-wrap mb-3" >
-    <div class="p-2" *ngFor="let card of cards; let i = index">
-    <mat-card class="example-card">
-
+    <div class="p-2"  *ngFor="let card of cards; let i = index">
+    <mat-card cdkDrag class="example-card">
+      <div class="drag" cdkDragHandle>
+        <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        </div>
       <mat-card-subtitle>
 
         <form>
           <mat-form-field>
             <mat-label>Titulo</mat-label>
-            <input
+            <input id="titulo"name='titulo'
             #titulo
             type="text"
             matInput
-
             >
-
             {{ card.titulo }}
           </mat-form-field>
         </form>
 
 
       </mat-card-subtitle>
-
-
-
       <mat-card-content>
         <form class="example-form">
           <mat-form-field class="example-full-width">
@@ -30,14 +30,12 @@
             <textarea
               type="text"
               [(ngModel)]="descricao"
-
               matInput cdkTextareaAutosize
               #autosize="cdkTextareaAutosize"
               cdkAutosizeMinRows="1"
               #message
               maxlength="256"
-
-            > {{ card.descricao }}
+            >{{ card.descricao }}
             </textarea>
 
             <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
@@ -46,10 +44,11 @@
       </mat-card-content>
       <mat-card-actions>
         <div class="button-row">
-        <button class="remover" *ngIf="!(i==0)" (click)="onRemoveCard(i)"mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
+        <button class="remover" *ngIf="!(i==0)" (click)="onRemoveCard(i)" mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
           <mat-icon>clear</mat-icon>
         </button>
         <button
+        type="reset"
         class="adicionar"
         *ngIf="i==0"
         (click)="onAddCard(titulo.value, message.value)"
