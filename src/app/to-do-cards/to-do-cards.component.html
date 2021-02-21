@@ -1,8 +1,10 @@
   <div class="d-flex flex-row flex-wrap mb-3" >
     <div class="p-2" *ngFor="let card of cards; let i = index">
     <mat-card class="example-card">
+
       <mat-card-subtitle>
-        <form >
+
+        <form>
           <mat-form-field>
             <mat-label>Titulo</mat-label>
             <input
@@ -10,10 +12,16 @@
             type="text"
             matInput
 
-            > {{ card.titulo }}
+            >
+
+            {{ card.titulo }}
           </mat-form-field>
         </form>
+
+
       </mat-card-subtitle>
+
+
 
       <mat-card-content>
         <form class="example-form">
@@ -38,10 +46,16 @@
       </mat-card-content>
       <mat-card-actions>
         <div class="button-row">
-        <button class="remover" *ngIf="!(i==0)" (click)="removerCard($index)"mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
+        <button class="remover" *ngIf="!(i==0)" (click)="onRemoveCard(i)"mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
           <mat-icon>clear</mat-icon>
         </button>
-        <button class="adicionar" *ngIf="i==0" (click)="adicionarCard(titulo.value, message.value)" class="botaoCriar" mat-mini-fab color="primary">
+        <button
+        class="adicionar"
+        *ngIf="i==0"
+        (click)="onAddCard(titulo.value, message.value)"
+        class="botaoCriar"
+        mat-mini-fab color="primary"
+        >
           <mat-icon>done</mat-icon>
         </button>
 

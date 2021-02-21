@@ -15,20 +15,22 @@ cards: Card[] = [
 ];
 
 
-adicionarCard(titulo, descricao){
+onAddCard(titulo, descricao){
 
 
   const newCard = new Card (titulo, descricao);
 
   this.cards.push(newCard);
-  alert(this.cards[1].titulo);
+  //alert(this.cards[1].titulo);
 
 
 }
 
-removerCard(index){
+onRemoveCard(index){
+
 
   this.cards.splice(index, 1);
+
 
 }
 
