@@ -11,15 +11,17 @@ import { Card } from './card.model';
 export class ToDoCardsComponent implements OnInit {
 
 cards: Card[] = [
-  new Card("teste","asdfasdf")
+  new Card("","")
 ];
 
 
 adicionarCard(titulo, descricao){
 
+
   const newCard = new Card (titulo, descricao);
 
   this.cards.push(newCard);
+  alert(this.cards[1].titulo);
 
 
 }
@@ -35,11 +37,7 @@ removerCard(index){
 
 
   ngOnInit(): void {
-  //   this.cards = [{
-  //     titulo: "asdfoisdf",
-  //     descricao: "aoshdasoidigas"
-  //   }
-  // ]
+
   }
 
 }
